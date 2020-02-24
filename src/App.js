@@ -1,14 +1,14 @@
 // in src/App.js
 import React from 'react';
-import { Admin, Resource, ListGuesser } from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
+import { UserList } from "./users";
 
 const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
-/* El componente <Admin> espera uno o mas componentes hijos <Resource>,
-   cada resource mapea un nombre a un endpoint en al API */
+/* Componente personalizado, UserList */
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    <Resource name="albums" list={ListGuesser} />
+    <Resource name="users" list={ UserList } />
   </Admin>
 );
 
