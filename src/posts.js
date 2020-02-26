@@ -12,21 +12,6 @@ import { List, Edit, Create,
          } from 'react-admin';
 
 
-/*async UNSAFE_componentDidMount(){
-    await this.fetchPosts()
-}
-fetchExercises = async() => {
-    let res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    let data = await res.json();
-
-    this.setState({
-        data
-    })
-
-    console.log(data);
-}
-*/
-
 /* Listar los post que llegan desde la API */     
 export const PostList = props => (
     <List {...props}>

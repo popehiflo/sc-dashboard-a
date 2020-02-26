@@ -3,7 +3,7 @@ import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 import { PostList, PostEdit, PostCreate } from './posts';
-import { UserList } from "./users";
+import { UserList } from './users';
 
 const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
 /* Componente personalizado, UserList */
