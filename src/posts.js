@@ -31,6 +31,9 @@ export const PostList = props => (
 );
 
 /* Editar un post */
+/* El componente <Edit> es responsable de buscar el registro
+    y mostrar el titulo de la pagina, pasa el registro al componente
+    <SimpleForm> que es el responsable del disenio del formulario  */
 export const PostEdit = props => (
     <Edit {...props}>
         <SimpleForm>
