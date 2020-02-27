@@ -29,10 +29,10 @@ export const PostList = props => (
             lineas mas abajo */}
         <Datagrid>
             <TextField source="id" />
-            <ReferenceField source="userId" reference="users">
+            <ReferenceField label="Usuario" source="userId" reference="users">
                 <TextField source="name" />
             </ReferenceField>
-            <TextField source="title" />
+            <TextField label="Titulo" source="title" />
             <EditButton />
         </Datagrid>
     </List>

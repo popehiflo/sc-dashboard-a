@@ -4,14 +4,16 @@ import { Admin, Resource } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 import { PostList, PostEdit, PostCreate } from './posts';
 import { UserList } from './users';
+import PostIcon from '@material-ui/icons/Book';
+import UserIcon from '@material-ui/icons/Group';
 
 const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
 /* Componente personalizado, UserList */
 const App = () => (
   <Admin dataProvider={dataProvider}>
     {/*Usando los nuevos componentes PostEdit y PostCreate, se agregan como atributos */}
-    <Resource name="posts" list={ PostList } edit={ PostEdit } create={ PostCreate } />
-    <Resource name="users" list={ UserList } />
+    <Resource icon={PostIcon} name="posts" list={ PostList } edit={ PostEdit } create={ PostCreate } />
+    <Resource icon={UserIcon} name="users" list={ UserList } />
   </Admin>
 );
 
