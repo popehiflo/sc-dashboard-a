@@ -30,12 +30,17 @@ export const PostList = props => (
     </List>
 );
 
+/* Cambiar el titulo mostrado al editar un post */
+const PostTitle = ({ record }) => {
+    return <span>Post - {record ? `"${record.title}"` : ''}</span>;
+};
+
 /* Editar un post */
 /* El componente <Edit> es responsable de buscar el registro
     y mostrar el titulo de la pagina, pasa el registro al componente
     <SimpleForm> que es el responsable del disenio del formulario  */
 export const PostEdit = props => (
-    <Edit {...props}>
+    <Edit title={<PostTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
             <ReferenceInput source="userId" reference="users">
