@@ -1,6 +1,7 @@
 // in src/posts.js
 import React from 'react';
 import { List, Edit, Create,
+        Filter,
         Datagrid, 
         TextField, 
         ReferenceField,
@@ -11,10 +12,19 @@ import { List, Edit, Create,
         SimpleForm,
          } from 'react-admin';
 
-
+/* "motor de busqueda" de criterios multiples */
+const PostFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Buscar Titulo" source="q" alwaysOn />
+        <ReferenceInput label="Usuario" source="userId" reference="users" allowEmpty >
+            <SelectInput optionText="name" />
+        </ReferenceInput>
+    </Filter>
+);
+         
 /* Listar los post que llegan desde la API */     
 export const PostList = props => (
-    <List {...props}>
+    <List filters={<PostFilter />} {...props}>
         {/*cambiamos esto <Datagrid rowClick="edit"> por un boton de accion explicita
             lineas mas abajo */}
         <Datagrid>
@@ -23,8 +33,6 @@ export const PostList = props => (
                 <TextField source="name" />
             </ReferenceField>
             <TextField source="title" />
-            {/*Este campo body deberia aparecer en el DataGrid, sino en una vista detallada*/}
-            <TextField source="body" />
             <EditButton />
         </Datagrid>
     </List>
