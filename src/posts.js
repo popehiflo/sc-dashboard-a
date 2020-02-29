@@ -1,4 +1,3 @@
-// in src/posts.js
 import React from 'react';
 import { List, Edit, Create,
         Filter,
@@ -32,7 +31,7 @@ export const PostList = props => (
             <ReferenceField label="Usuario" source="userId" reference="users">
                 <TextField source="name" />
             </ReferenceField>
-            <TextField label="Titulo" source="title" />
+            <TextField label="Incidencia" source="title" />
             <EditButton />
         </Datagrid>
     </List>
